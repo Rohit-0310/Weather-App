@@ -1,6 +1,7 @@
 import React from 'react'
 import Search from './Search'
 import "./HomePage.css"
+import WeatherDetails from './WeatherDetails'
 const HomePage = () => {
     return (
         <div>
@@ -19,7 +20,7 @@ const HomePage = () => {
                     <h1>1</h1>
                     <p>1</p>
 
-                    
+                    <WeatherDetails />
                 </div>
             </div>
         
