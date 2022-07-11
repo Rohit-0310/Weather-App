@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Search from './Search';
-import WeatherDetails from './WeatherDetails';
+import SunRiseSet from './SunRiseSet';
 import WeatherWeekList from './WeatherWeekList';
 import "./HomePage.css";
 import getFormattedWeatherData from "./API/weather";
@@ -37,7 +37,7 @@ const HomePage = () => {
                         <div>
 
                             <WeatherWeekList weather={weather} />
-                            <WeatherDetails weather={weather}/>
+                            <SunRiseSet weather={weather}/>
                         </div>
                     )}
 
