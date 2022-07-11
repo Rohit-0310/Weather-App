@@ -30,7 +30,7 @@ const WeatherWeekList = ({ weather: { daily } }) => {
                     // class="WeekListCard"
                     className={list[0].title === days.title ? "list" : ""}
                   >
-                    <p >{days.title}</p>
+                    <p style={{marginTop:"-0px"}}>{days.title}</p>
                     <p className="listMinMax">
                       <spaen>{Math.floor(days.max)} °</spaen>
                       <span>{Math.floor(days.min)} °</span>
