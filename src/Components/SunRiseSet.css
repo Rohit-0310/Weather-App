@@ -21,3 +21,13 @@
     font-weight: 700;
 }
 
+.SunTime{
+    color: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px 0px 10px;
+}
+.SunTime > div {
+    display: flex;
+    flex-direction: column;
+}
