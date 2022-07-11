@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import pinloc from "../ICON/pin.png";
 import searchIcon from "../ICON/search-interface-symbol.png"
-import "./CSS/Search.css"
+import "./Search.css"
 
 
 
