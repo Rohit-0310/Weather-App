@@ -11,12 +11,11 @@ import "./HourlyChart.css";
 
 import {
     ResponsiveContainer,
-    LineChart,
     Tooltip,
-    Line,
     Legend,
     XAxis,
-    YAxis,
+    AreaChart,
+    Area,
     CartesianGrid,
   } from "recharts";
 
@@ -55,20 +54,23 @@ const HourlyChart = ({
             
             <div className="ChartMain">
                 <ResponsiveContainer width="100%">
-                    <LineChart
+                    <AreaChart
                         // width={650}
                         // height={250}
                         data={weather.hourly}
                         // margin={{ top: 20, right: 2, left: 20 }}
                     >   
-                          <CartesianGrid strokeDasharray="3 3" />
+                          <CartesianGrid strokeDasharray="2" />
                         <XAxis dataKey="title" interval={'preserveStartEnd'} />
                         {/* <YAxis /> */}
                         <Tooltip />
                         <Legend />
-                        <Line 
-                         type="monotone" dataKey="temp" stroke="#8884d8" />
-                    </LineChart>
+                        <Area 
+                         type="monotone" 
+                         dataKey="temp" 
+                         activeDot={{r:7}}
+                         stroke="rgb(0, 166, 250)" />
+                    </AreaChart>
                 </ResponsiveContainer>
             </div>
         
