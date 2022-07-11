@@ -28,6 +28,7 @@ const HomePage = () => {
 
 
     console.log(weather)
+    // console.log("weather.hourly", weather.hourly)
     return (
         <div>
             <div className="home_top">
@@ -37,8 +38,8 @@ const HomePage = () => {
                     {/* <WeatherHourlyChart weather={weather} /> */}
                     {weather && (
                         <div>
-                            <HourlyChart  weather={weather} />
                             <WeatherWeekList weather={weather} />
+                            <HourlyChart  weather={weather} />
                             <SunRiseSet weather={weather}/>
                         </div>
                     )}
