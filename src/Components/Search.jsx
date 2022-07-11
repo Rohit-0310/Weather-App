@@ -60,7 +60,7 @@ const Search = ({ setQuery }) => {
                     </div>
 
 
-                    {
+                    {/* {
                         Cities
                         .filter((temp)=>{
                             if(city === ""){
@@ -75,7 +75,7 @@ const Search = ({ setQuery }) => {
                                 <span>{temp.country}</span>
                             </div>
                         })
-                    }
+                    } */}
           </div>
       </div>
     )
