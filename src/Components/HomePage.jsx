@@ -32,13 +32,7 @@ const HomePage = () => {
                 <div className="card">
     
                     <Search setQuery={setQuery}/>
-                    <p>this is for testing purposes</p>
-                    <h1>1</h1>
-                    <h1>1</h1>
-                    <h1>1</h1>
-                    <p>1</p>
-                    
-
+        
                     {weather && (
                         <div>
 
