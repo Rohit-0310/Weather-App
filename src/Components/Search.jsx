@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import pinloc from "../ICON/pin.png";
 import searchIcon from "../ICON/search-interface-symbol.png"
 import "./Search.css"
-
+import Cities from "./City" ;
 
 
 const Search = ({ setQuery }) => {
@@ -31,8 +31,11 @@ const Search = ({ setQuery }) => {
                 }
                 setCity("");
                 console.log(city);
+                console.log("Cities",Cities[1].city)
             }
         };
+
+        // console.log(city);
     return (
       <div>
           <div>
@@ -46,12 +49,33 @@ const Search = ({ setQuery }) => {
                     onChange={(e)=>setCity(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Search City" 
+                    autocomplete="on"
                     />
+                    
 
                     <button className="SearchButton" type="button">
                         <img  onClick={handleKeyDown}  className="LocIcon" src={searchIcon} alt="search" />
                     </button>
-              </div>
+
+                    </div>
+
+
+                    {
+                        Cities
+                        .filter((temp)=>{
+                            if(city === ""){
+                                // return;
+                            } else {
+                                return temp.city.toLowerCase().includes(city.toLocaleLowerCase());
+                            }
+                        })
+                        .map((temp, index)=>{
+                            return <div key={index}>
+                                <span>{temp.city}</span>,
+                                <span>{temp.country}</span>
+                            </div>
+                        })
+                    }
           </div>
       </div>
     )

@@ -5,12 +5,12 @@ import WeatherWeekList from './WeatherWeekList';
 import "./HomePage.css";
 import getFormattedWeatherData from "./API/weather";
 import HourlyChart from './HourlyChart';
-// import WeatherHourlyChart from './WeatherHourlyChart';
+
 
 const HomePage = () => {
 
     const [weather, setWeather] = useState(null);
-    const [query, setQuery] = useState({ q: "Patna" });
+    const [query, setQuery] = useState();
 
     
     useEffect(() => {
@@ -35,7 +35,7 @@ const HomePage = () => {
                 <div className="card">
     
                     <Search setQuery={setQuery}/>
-                    {/* <WeatherHourlyChart weather={weather} /> */}
+                    
                     {weather && (
                         <div>
                             <WeatherWeekList weather={weather} />
