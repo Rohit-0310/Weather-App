@@ -3,7 +3,7 @@
     max-width: 720px;
     margin: 0 auto;
     min-height: 50vh;
-    font-family: 'Roboto', sans-serif !important;
+    /* font-family: 'Roboto', sans-serif !important; */
   	box-sizing: border-box;
     /* border: 1px solid #000; */
 }

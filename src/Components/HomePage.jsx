@@ -4,6 +4,8 @@ import SunRiseSet from './SunRiseSet';
 import WeatherWeekList from './WeatherWeekList';
 import "./HomePage.css";
 import getFormattedWeatherData from "./API/weather";
+import HourlyChart from './HourlyChart';
+// import WeatherHourlyChart from './WeatherHourlyChart';
 
 const HomePage = () => {
 
@@ -32,15 +34,14 @@ const HomePage = () => {
                 <div className="card">
     
                     <Search setQuery={setQuery}/>
-        
+                    {/* <WeatherHourlyChart weather={weather} /> */}
                     {weather && (
                         <div>
-
+                            <HourlyChart  weather={weather} />
                             <WeatherWeekList weather={weather} />
                             <SunRiseSet weather={weather}/>
                         </div>
                     )}
-
                 </div>
             </div>
         
