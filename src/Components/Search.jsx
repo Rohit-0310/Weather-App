@@ -9,30 +9,20 @@ const Search = ({ setQuery }) => {
     const [city, setCity] = useState("");
 
     useEffect(() => {
-        findLocation();
+        navigator.geolocation.getCurrentPosition(
+            function success(position) {
+                let lat = position.coords.latitude;
+                let lon = position.coords.longitude;
+                setQuery({ lat, lon });
+        },
+        );
     }, []);
 
 
 
-    const findLocation = () => {
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(
-                function success(position) {
-                    let lat = position.coords.latitude;
-                    let lon = position.coords.longitude;
-                    setQuery({ lat, lon });
-            },
-            function error(error_message) {
-                console.error(
-                    "An error has occured while retrieving location",
-                    error_message
-                );
-            }
-            );
-        } else {
-            console.log("geolocation is not enabled on this browser");
-        }
-    };     
+    // const findLocation = () => {
+            
+    // };     
     
         const handleKeyDown = (e) => {
             if (e.key === "Enter") {
@@ -40,7 +30,7 @@ const Search = ({ setQuery }) => {
                   setQuery({ q: city });
                 }
                 setCity("");
-                // console.log(city);
+                console.log(city);
             }
         };
     return (
@@ -50,7 +40,7 @@ const Search = ({ setQuery }) => {
                     <div> <img className="LocIcon"  src={pinloc} alt="location" /></div>
 
                     <input className="InputSearch"
-                    type="search"
+                    type="text"
                     name="search"
                     value={city}
                     onChange={(e)=>setCity(e.target.value)}
@@ -59,7 +49,7 @@ const Search = ({ setQuery }) => {
                     />
 
                     <button className="SearchButton" type="button">
-                        <img className="LocIcon" src={searchIcon} alt="search" />
+                        <img  onClick={handleKeyDown}  className="LocIcon" src={searchIcon} alt="search" />
                     </button>
               </div>
           </div>
