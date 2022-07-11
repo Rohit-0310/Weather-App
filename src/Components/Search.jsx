@@ -19,6 +19,16 @@ const Search = ({ setQuery }) => {
     }, []);
 
 
+    const handleLocationClick = () => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            setQuery({ lat, lon });
+          });
+        }
+      };
+
 
     // const findLocation = () => {
             
@@ -35,12 +45,18 @@ const Search = ({ setQuery }) => {
             }
         };
 
+        const handleSearchClick = () => {
+            if (city !== "") {
+              setQuery({ q: city });
+            }
+          };
+
         // console.log(city);
     return (
       <div>
           <div>
               <div className="SearchMain">
-                    <div> <img className="LocIcon"  src={pinloc} alt="location" /></div>
+                    <div> <img onClick={handleLocationClick} className="LocIcon"  src={pinloc} alt="location" /></div>
 
                     <input className="InputSearch"
                     type="text"
@@ -54,7 +70,7 @@ const Search = ({ setQuery }) => {
                     
 
                     <button className="SearchButton" type="button">
-                        <img  onClick={handleKeyDown}  className="LocIcon" src={searchIcon} alt="search" />
+                        <img  onClick={handleSearchClick}  className="LocIcon" src={searchIcon} alt="search" />
                     </button>
 
                     </div>
