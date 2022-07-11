@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Search from './Search';
 import WeatherDetails from './WeatherDetails';
 import WeatherWeekList from './WeatherWeekList';
-import "./HomePage.css";
+import "./CSS/HomePage.css";
 import getFormattedWeatherData from "./API/weather";
 
 const HomePage = () => {

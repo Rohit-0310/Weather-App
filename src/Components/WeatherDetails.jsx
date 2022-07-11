@@ -1,5 +1,5 @@
 import React from 'react'
-import "./WeatherDetails.css"
+import "./CSS/WeatherDetails.css"
 const WeatherDetails = () => {
     return (
         <div>
