@@ -97,4 +97,4 @@ const Search = ({ setQuery }) => {
     )
 }
 
-export default Search
+export default Search;

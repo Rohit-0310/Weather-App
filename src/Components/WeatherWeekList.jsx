@@ -58,4 +58,4 @@ const WeatherWeekList = ({ weather: { daily } }) => {
     )
 }
 
-export default WeatherWeekList
+export default WeatherWeekList;

@@ -2,7 +2,6 @@ import React from 'react'
 import "./SunRiseSet.css"
 import {formatToLocalTime} from "./API/weather"
 const SunRiseSet = ({
-    weather,
     weather: { sunrise, sunset, humidity, pressure ,timezone},
 
 

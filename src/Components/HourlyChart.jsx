@@ -7,8 +7,6 @@ import sunny from "../ICON/sunny.png";
 
 import "./HourlyChart.css";
 
-
-
 import {
     ResponsiveContainer,
     Tooltip,
@@ -27,6 +25,7 @@ const HourlyChart = ({
     weather,
     weather: {  main, name, temp, timezone },
   }) => {
+
     return (
         <div className="MainHr">
             <div className="HrTemp">
@@ -105,14 +104,8 @@ const HourlyChart = ({
   <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
 </AreaChart> */}
 
-
-
-
-
-
-
         </div>
     )
 }
 
-export default HourlyChart
+export default HourlyChart;
