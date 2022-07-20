@@ -101,7 +101,7 @@ export const SunRiseSetChart = () => {
                   text-anchor="middle"
                 >
                   <tspan data-v-7dc748f4="" x="356" dy="0.71em">
-                    2am
+                    1pm
                   </tspan>
                 </text>
               </g>
