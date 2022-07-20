@@ -27,14 +27,14 @@ const HomePage = () => {
         }, [query]);
 
 
-    console.log(weather)
-    // console.log("weather.hourly", weather.hourly)
+    // console.log("weather",weather)
+    // console.log("query", query)
     return (
         <div>
             <div className="home_top">
                 <div className="card">
     
-                    <Search setQuery={setQuery}/>
+                    <Search weather={weather} setQuery={setQuery}/>
                     
                     {weather && (
                         <div>
