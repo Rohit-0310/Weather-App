@@ -4,9 +4,13 @@ import searchIcon from "../ICON/search-interface-symbol.png"
 import "./Search.css"
 import Cities from "./City" ;
 
+import {cities} from "./db"
+
 
 const Search = ({ setQuery }) => {
     const [city, setCity] = useState("");
+
+    const [debounceArr, SetDebounceArr] = useState([])
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
@@ -41,7 +45,7 @@ const Search = ({ setQuery }) => {
                 }
                 setCity("");
                 console.log(city);
-                console.log("Cities",Cities[1].city)
+                // console.log("Cities",Cities[1].city)
             }
         };
 
@@ -50,6 +54,25 @@ const Search = ({ setQuery }) => {
               setQuery({ q: city });
             }
           };
+
+
+          //new debounce 
+
+          
+        useEffect(() => {
+            let res = cities.filter((ele) => {
+                return ((ele.slice(0, city.length).toLowerCase() === city) || (ele.slice(0, city.length) === city))
+            })
+                SetDebounceArr(res)
+    
+        },[city])
+
+          let count = 0;
+
+        const handleInput = (e) => {
+            setCity(e.target.value)
+            count = 0
+        }
 
         //   console.log(Cities.city)
 
@@ -63,15 +86,15 @@ const Search = ({ setQuery }) => {
                     <input className="InputSearch"
                     type="text"
                     name="search"
-                    onInput={(e)=>setCity(Cities)}
+                    // onInput={(e)=>setCity(Cities)}
                     value={city}
+                    onInput={handleInput} 
                     onChange={(e)=>setCity(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Search City" 
-                    autocomplete="on"
+                    // autocomplete="on"
                     />
                     
-
                     <button className="SearchButton" type="button">
                         <img  onClick={handleSearchClick}  className="LocIcon" src={searchIcon} alt="search" />
                     </button>
@@ -79,7 +102,27 @@ const Search = ({ setQuery }) => {
                     </div>
 
 
+
+
+
                     {
+                    count === 0 &&
+                <div style={{ height : "200px", width : "91%", overflow : "auto", margin : "auto"}}>
+                    {debounceArr.map((e) => (   
+                        <div onClick={()=>setCity(e)}>
+                        <p>{e}</p>
+                        <div>
+                        
+                        </div>     
+                        </div>    
+                    ))}
+                </div>
+            }
+
+
+
+
+                    {/* {
                         Cities
                         .filter((temp)=>{
                             if(city === ""){
@@ -89,12 +132,15 @@ const Search = ({ setQuery }) => {
                             }
                         })
                         .map((temp, index)=>{
-                            return <div key={index}>
-                                <span>{temp.city}</span>,
-                                <span>{temp.country}</span>
+                            return <div key={index} >
+                                <div onClick={((temp)=> setCity(temp.city))} >
+                                    <span>{temp.city}</span>,
+                                    <span>{temp.country}</span>
+                                    <hr/>
+                                </div>
                             </div>
                         })
-                    }
+                    } */}
           </div>
       </div>
     )
