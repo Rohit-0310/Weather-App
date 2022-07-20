@@ -1,6 +1,7 @@
 import React from 'react'
 import "./SunRiseSet.css"
 import {formatToLocalTime} from "./API/weather"
+import { SunRiseSetChart } from './SunRiseSetChart'
 const SunRiseSet = ({
     weather: { sunrise, sunset, humidity, pressure ,timezone},
 
@@ -33,7 +34,7 @@ const SunRiseSet = ({
                 </div>
             </div>
             <div className="weather_curve">
-                <img width="95%" src="https://www.suntoday.org/images/sunrise-sunset.png" alt="Sunrise and Sunset" />
+            <SunRiseSetChart />
             </div>
         </div>
     )
