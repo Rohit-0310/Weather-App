@@ -54,7 +54,7 @@ const Search = ({ setQuery }) => {
               setQuery({ q: city });
             }
 
-            
+
           };
 
 
@@ -69,11 +69,15 @@ const Search = ({ setQuery }) => {
     
         },[city])
 
-          let count = 0;
+        let count = 0;
 
         const handleInput = (e) => {
             setCity(e.target.value)
             count = 0
+        }
+
+        const handledisplay = () =>{
+            count = 1
         }
 
         //   console.log(Cities.city)
@@ -111,11 +115,11 @@ const Search = ({ setQuery }) => {
                     count === 0 &&
                 <div style={{ height : "200px", width : "91%", overflow : "auto", margin : "auto"}}>
                     {debounceArr.map((e) => (   
-                        <div  onClick={()=>setCity(e)}>
-                            <div className="de_main" onClick={handleSearchClick}>
+                        <div className="de_main" onClick={()=>(setCity(e),  handledisplay(), handleSearchClick())}>
+                            {/* <div className="de_main" onClick={handleSearchClick}> */}
                                 <p>{e}</p>
                                 <div className="de_icon"> <img className="LocIcon"  src={pinloc} alt="location" /></div>
-                            </div>
+                            {/* </div> */}
                         </div>    
                     ))}
                 </div>
