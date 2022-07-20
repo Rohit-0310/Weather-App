@@ -116,10 +116,8 @@ const Search = ({ setQuery }) => {
                 <div style={{ height : "200px", width : "91%", overflow : "auto", margin : "auto"}}>
                     {debounceArr.map((e) => (   
                         <div className="de_main" onClick={()=>(setCity(e),  handledisplay(), handleSearchClick())}>
-                            {/* <div className="de_main" onClick={handleSearchClick}> */}
                                 <p>{e}</p>
                                 <div className="de_icon"> <img className="LocIcon"  src={pinloc} alt="location" /></div>
-                            {/* </div> */}
                         </div>    
                     ))}
                 </div>
