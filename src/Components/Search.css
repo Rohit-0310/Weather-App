@@ -38,3 +38,23 @@
     width: 1.25rem;
     
 }
+
+.de_main{
+    height : 50px;
+    margin :auto;
+    border-radius : 1px ;
+    display : flex;
+    justify-content: space-between;
+    align-items  : center;
+    border-bottom : 0.5px solid lightgrey;
+    padding : 0px 10px;
+    background-color : white;
+    cursor: pointer;
+    
+}
+
+.de_icon{
+    width : 10%;
+    display : flex;
+    justify-content: space-around;
+}
