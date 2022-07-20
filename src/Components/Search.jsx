@@ -51,6 +51,8 @@ const Search = ({ setQuery }) => {
             }
           };
 
+        //   console.log(Cities.city)
+
         // console.log(city);
     return (
       <div>
@@ -61,6 +63,7 @@ const Search = ({ setQuery }) => {
                     <input className="InputSearch"
                     type="text"
                     name="search"
+                    onInput={(e)=>setCity(Cities)}
                     value={city}
                     onChange={(e)=>setCity(e.target.value)}
                     onKeyDown={handleKeyDown}
@@ -76,13 +79,13 @@ const Search = ({ setQuery }) => {
                     </div>
 
 
-                    {/* {
+                    {
                         Cities
                         .filter((temp)=>{
                             if(city === ""){
                                 // return;
                             } else {
-                                return temp.city.toLowerCase().includes(city.toLocaleLowerCase());
+                                return temp.city.toLowerCase().includes(city.toLowerCase());
                             }
                         })
                         .map((temp, index)=>{
@@ -91,7 +94,7 @@ const Search = ({ setQuery }) => {
                                 <span>{temp.country}</span>
                             </div>
                         })
-                    } */}
+                    }
           </div>
       </div>
     )
