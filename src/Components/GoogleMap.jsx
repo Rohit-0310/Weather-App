@@ -6,7 +6,7 @@ const GoogleMap = ({
   }) => {
 
 
-    console.log(" inside GoogleMap", weather)
+    console.log(" inside GoogleMap", weather.name)
   return (
     <div>GoogleMap</div>
   )
