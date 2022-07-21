@@ -5,6 +5,7 @@ import WeatherWeekList from './WeatherWeekList';
 import "./HomePage.css";
 import getFormattedWeatherData from "./API/weather";
 import HourlyChart from './HourlyChart';
+import GoogleMap from './GoogleMap';
 
 
 const HomePage = () => {
@@ -27,8 +28,8 @@ const HomePage = () => {
         }, [query]);
 
 
-    // console.log("weather",weather)
-    // console.log("query", query)
+    console.log("weather",weather)
+    console.log("query", query)
     return (
         <div>
             <div className="home_top">
@@ -40,6 +41,7 @@ const HomePage = () => {
                         <div>
                             <WeatherWeekList weather={weather} />
                             <HourlyChart  weather={weather} />
+                            <GoogleMap weather={weather} />
                             <SunRiseSet weather={weather}/>
                         </div>
                     )}
