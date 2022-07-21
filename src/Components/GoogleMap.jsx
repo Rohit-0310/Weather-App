@@ -10,9 +10,9 @@ const GoogleMap = ({
     console.log(" inside GoogleMap", cityName)
   return (
     <div>
-        <div id = "map">
+        <div style={{padding:'5px'}}>
                     <iframe
-                    title={cityName}
+                        title={cityName}
                         src={`https://maps.google.com/maps?q=${cityName}=&z=13&ie=UTF8&iwloc=&output=embed`}
                         
                         border="0" 
@@ -25,4 +25,4 @@ const GoogleMap = ({
   )
 }
 
-export default GoogleMap
+export default GoogleMap;
