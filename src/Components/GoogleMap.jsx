@@ -5,10 +5,23 @@ const GoogleMap = ({
     weather: {  main, name, temp, timezone },
   }) => {
 
+    let cityName = weather.name
 
-    console.log(" inside GoogleMap", weather.name)
+    console.log(" inside GoogleMap", cityName)
   return (
-    <div>GoogleMap</div>
+    <div>
+        <div id = "map">
+                    <iframe
+                    title={cityName}
+                        src={`https://maps.google.com/maps?q=${cityName}=&z=13&ie=UTF8&iwloc=&output=embed`}
+                        
+                        border="0" 
+                        width="100%" 
+                        height="450" 
+                        style={{border:"0"}}
+                    / >
+                </div>
+    </div>
   )
 }
 
