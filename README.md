@@ -16,13 +16,18 @@
 
 ![weather-autosuggetion](https://github.com/Rohit-0310/Weather-App/blob/main/src/ICON/search.png?raw=true)
 
-#### <p>Once user click any city name or search icon after typing the city name, it will display the result for the same.</p>
+#### <p>Once the User clicks any city name or search icon after typing the city name, it will display the result for the same.</p>
  
 ![weather-input-daily](https://github.com/Rohit-0310/Weather-App/blob/main/src/ICON/week.png?raw=true)
 
 #### <p>This is the graph for hourly temperature.</P>
  
 ![weather-hourly-temp-chart](https://github.com/Rohit-0310/Weather-App/blob/main/src/ICON/hour.png?raw=true)
+
+
+#### <p>Once the user clicks any city name or Search Icon after typing the city name, it will display the google map for the same.</P>
+ 
+![weather-hourly-temp-chart](https://github.com/Rohit-0310/Weather-App/blob/main/src/ICON/g-map.png?raw=true)
 
 #### <p>This is for Pressure and Humidity including a graph for sunrise and sunset.</P>
 
